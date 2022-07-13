@@ -6,7 +6,13 @@ export const loadPosts = async () => {
 
   const postsJson = await posts.json();
   const photosJson = await photos.json();
-
+  postsJson[0].title = 'There';
+  postsJson[1].title = 'She';
+  postsJson[2].title = 'is';
+  postsJson[3].title = '-----';
+  postsJson[4].title = 'how';
+  postsJson[5].title = 'you';
+  postsJson[6].title = 'doing?';
   const postsAndPhotos = postsJson.map((post, index) => {
     return { ...post, cover: photosJson[index].url }
   });
